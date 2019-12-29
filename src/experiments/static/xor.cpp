@@ -120,7 +120,7 @@ static struct XorInit {
                 steps.emplace_back(X, Y, weight);
                 tests.emplace_back(steps);
             }
+            return tests;
         });
-        return tests;
     }
 } init;
