@@ -105,16 +105,33 @@ static struct XorInit {
             CSVRow              y;
             const real_t weight = 1.0;
             vector<Test> tests;
-            while(input >> x && output >> y) {
+            if (!test) {
+                while(input >> x && output >> y) {
+                    vector<Step> steps;
+                    vector <real_t> X;
+                    for (int i = 0; i < 100; ++i) {
+                        float xx = std::stof(x[i]);
+                        append(X, xx);
+                    }
+                    vector <real_t> Y;
+                    for (int i = 0; i < 1; ++i) {
+                        float yy = std::stof(y[i]);
+                        append(Y, yy);
+                    }
+                    steps.emplace_back(X, Y, weight);
+                    tests.emplace_back(steps);
+                }
+            } else {
+                vector<Test> tests;
                 vector<Step> steps;
                 vector <real_t> X;
                 for (int i = 0; i < 100; ++i) {
-                    float xx = std::stof(x[i]);
+                    float xx = rand();
                     append(X, xx);
                 }
                 vector <real_t> Y;
                 for (int i = 0; i < 1; ++i) {
-                    float yy = std::stof(y[i]);
+                    float yy = 0.0;
                     append(Y, yy);
                 }
                 steps.emplace_back(X, Y, weight);
