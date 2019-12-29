@@ -18,6 +18,8 @@
 
 #include "neattypes.h"
 
+extern bool test;
+
 namespace NEAT {
 
 	enum functype {
