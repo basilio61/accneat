@@ -196,10 +196,23 @@ static void create_config(const std::vector<Test> &tests,
     cout << "=================" << endl;
     cout << "===== TESTS =====" << endl;
     cout << "=================" << endl;
-    for(size_t i = 0; i < tests.size(); i++) {
-        const Test &t = tests[i];
-        for(size_t j = 0; j < t.steps.size(); j++) {
-            const Step s = t.steps[j];
+    int runs;
+    if (runs == 10) {
+        for(size_t i = 0; i < tests.size(); i++) {
+            const Test &t = tests[i];
+            printf("~~~ %s\n", t.name.c_str());
+            for(size_t j = 0; j < t.steps.size(); j++) {
+                const Step s = t.steps[j];
+                for(size_t ii = 0; ii < s.input.size(); ii++) {
+                    printf("%1.3f ", s.input[ii]);
+                }
+                printf("| ");
+                for(size_t ii = 0; ii < s.output.size(); ii++) {
+                    printf("%1.3f ", s.output[ii]);
+                }
+                printf(" ; weight=%f", s.weight);
+                printf("\n");
+            }
         }
     }
 }
