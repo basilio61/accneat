@@ -62,7 +62,7 @@ struct Config {
 //--- Manages a Network's sensors and evaluates a Network's output based on
 //--- the Config. Will be used by both CPU and GPU.
 //---
-real_t *y;
+extern real_t *y;
 
 struct Evaluator {
     typedef ::Config Config;
