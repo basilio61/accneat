@@ -5,6 +5,7 @@
 
 #include <assert.h>
 #include <iostream>
+#include <sstream>
 
 using namespace NEAT;
 using namespace std;
@@ -91,7 +92,10 @@ struct Evaluator {
         real_t result = 0.0;
 
         for(size_t i = 0; i < config->noutputs; i++) {
-            printf(expected[i]);
+            std::ostringstream ss;
+            ss << expected[i];
+            std::string s(ss.str());
+            printf(s);
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
