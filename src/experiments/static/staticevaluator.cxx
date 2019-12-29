@@ -94,6 +94,7 @@ struct Evaluator {
         real_t *expected = config->outputs(istep);
         real_t result = 0.0;
         const int l = 5;
+        int runs;
         for(size_t i = 0; i < config->noutputs; i++) {
             std::ostringstream ss;
             ss << expected[i];
@@ -101,7 +102,10 @@ struct Evaluator {
             char char_array[l];
             strcpy(char_array, s.c_str());
             const char * ch = char_array;
-            printf(ch);
+            
+            if (runs == 10) {
+                printf(ch);
+            }
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
