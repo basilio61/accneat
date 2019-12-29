@@ -8,7 +8,6 @@
 #include "stats.h"
 #include "timer.h"
 #include "util.h"
-#include "neat.h"
 
 namespace NEAT {
 
