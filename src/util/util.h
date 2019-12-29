@@ -1,5 +1,7 @@
 #pragma once
 
+extern int runs;
+
 namespace NEAT {
 
 #define error(msg) {std::cerr << __FILE__ << ":" << __LINE__ << ": " << msg << std::endl; exit(1);}
