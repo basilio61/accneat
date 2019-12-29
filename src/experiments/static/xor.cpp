@@ -1,6 +1,6 @@
 #include "std.h"
 #include "staticexperiment.h"
-
+#include "neat.h"
 #include <iterator>
 #include <iostream>
 #include <fstream>
