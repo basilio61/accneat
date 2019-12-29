@@ -100,7 +100,7 @@ struct Evaluator {
             char char_array[s.length() + 1];
             strcpy(char_array, s.c_str());
             const char ch[strlen(char_array)] = char_array;
-            printf();
+            printf(ch);
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
