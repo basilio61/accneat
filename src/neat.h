@@ -19,6 +19,7 @@
 #include "neattypes.h"
 
 extern bool test;
+extern int runs;
 
 namespace NEAT {
 
