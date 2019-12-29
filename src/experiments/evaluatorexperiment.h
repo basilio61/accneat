@@ -70,14 +70,16 @@ namespace NEAT {
 
             for(int expcount = 1; expcount <= env->num_runs; expcount++) {
                 rng_t rng_exp(rng.integer());
-                if (!test) {
+                vector<unique_ptr<Genome>> genomes;
+                if (test) {
                     fittest = nullptr;
                     env->genome_manager = GenomeManager::create();
-                    vector<unique_ptr<Genome>> genomes = create_seeds(rng_exp);
+                    genomes = create_seeds(rng_exp);
                 }
+                pop = Population::create(rng_exp, genomes);
 
                 //Spawn the Population
-                pop = Population::create(rng_exp, genomes);
+                
       
                 bool success = false;
                 int gen;
