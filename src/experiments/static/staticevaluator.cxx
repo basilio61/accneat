@@ -95,7 +95,9 @@ struct Evaluator {
             std::ostringstream ss;
             ss << expected[i];
             std::string s(ss.str());
-            printf(s);
+            char char_array[s.length() + 1];
+            strcpy(char_array, s.c_str());
+            printf(char_array);
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
