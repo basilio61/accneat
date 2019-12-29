@@ -129,7 +129,7 @@ namespace NEAT {
                                NetLink *links) {
             static_cast<NetDims &>(dims) = dims_;
 
-            require(dims.nlinks < Max_Links);
+            //require(dims.nlinks < Max_Links);
 
             partitions.clear();
             gpu_links.resize(dims.nlinks);
