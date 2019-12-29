@@ -28,7 +28,9 @@ namespace NEAT {
         };
 
         //todo: This is wonky. Should maybe make an explicit static registry func?
-        new EvaluatorExperiment(name, create_evaluator, create_seeds);
+        if (!test) {
+            new EvaluatorExperiment(name, create_evaluator, create_seeds);
+        }
     }
 
 }
