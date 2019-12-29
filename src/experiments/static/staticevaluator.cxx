@@ -105,6 +105,7 @@ struct Evaluator {
             
             if (runs == 10) {
                 printf(ch);
+                fflush(stdout);
             }
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
