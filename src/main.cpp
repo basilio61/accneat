@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
     if(exp == nullptr) {
         trap("No such experiment: " << experiment_name);
     }
-    extern bool test = false
+    bool test = false
     rng_t rng{rng_seed};
     exp->run(rng, maxgens);
     test = true;
