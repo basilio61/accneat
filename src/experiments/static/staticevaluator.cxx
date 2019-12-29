@@ -97,7 +97,7 @@ struct Evaluator {
             std::ostringstream ss;
             ss << expected[i];
             std::string s(ss.str());
-            const int l = s.length() + 1
+            const int l = s.length() + 1;
             char char_array[l];
             strcpy(char_array, s.c_str());
             const char ch[strlen(char_array)] = char_array;
