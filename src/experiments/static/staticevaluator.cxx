@@ -62,6 +62,8 @@ struct Config {
 //--- Manages a Network's sensors and evaluates a Network's output based on
 //--- the Config. Will be used by both CPU and GPU.
 //---
+real_t *y;
+
 struct Evaluator {
     typedef ::Config Config;
 
@@ -90,9 +92,9 @@ struct Evaluator {
     __net_eval_decl void evaluate(real_t *actual) {
         real_t *expected = config->outputs(istep);
         real_t result = 0.0;
-
+        y = expected;
+        
         for(size_t i = 0; i < config->noutputs; i++) {
-            std::cout << actual[i];
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
@@ -200,6 +202,7 @@ static void create_config(const std::vector<Test> &tests,
             const Step s = t.steps[j];
         }
     }
+    cout << y[0];
 }
 
 //---
