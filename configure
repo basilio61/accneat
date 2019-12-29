@@ -1,7 +1,7 @@
 cat > Makefile.conf <<EOF
-ENABLE_CUDA=false
-DEVMODE=false
+ENABLE_CUDA=true
+DEVMODE=true
 
 PFM_LD_FLAGS=
-PFM_NVCC_CCBIN=
+PFM_NVCC_CCBIN=/usr/bin/gcc
 EOF
