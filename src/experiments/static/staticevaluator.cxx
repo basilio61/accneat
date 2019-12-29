@@ -91,7 +91,7 @@ struct Evaluator {
         real_t result = 0.0;
 
         for(size_t i = 0; i < config->noutputs; i++) {
-            cout << 'Hello world';
+            printf(expected[i]);
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
             if(err < 0.05) {
