@@ -130,12 +130,12 @@ int main(int argc, char *argv[]) {
     if(exp == nullptr) {
         trap("No such experiment: " << experiment_name);
     }
-    bool test = false
+    bool test = false;
     rng_t rng{rng_seed};
     exp->run(rng, maxgens);
     test = true;
   
-    rng_t rng{rng_seed};
+    //rng_t rng{rng_seed};
     env->pop_size = 1;
     exp->run(rng, 1);
   
