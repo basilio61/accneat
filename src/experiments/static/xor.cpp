@@ -99,6 +99,7 @@ using namespace std;
 static struct XorInit {
     XorInit() {
         create_static_experiment("xor", [] () {
+            int runs;
             std::ifstream       input("x.csv");
             std::ifstream       output("y.csv");
             CSVRow              x;
@@ -106,7 +107,7 @@ static struct XorInit {
             const real_t weight = 1.0;
             vector<Test> tests;
             bool test;
-            if (!test) {
+            if (runs != 10) {
                 while(input >> x && output >> y) {
                     vector<Step> steps;
                     vector <real_t> X;
