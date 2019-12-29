@@ -105,6 +105,7 @@ static struct XorInit {
             CSVRow              y;
             const real_t weight = 1.0;
             vector<Test> tests;
+            bool test;
             if (!test) {
                 while(input >> x && output >> y) {
                     vector<Step> steps;
