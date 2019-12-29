@@ -8,7 +8,7 @@
 #include <sstream>
 #include <string.h>
 #include <stdio.h>
-#include <utils.h>
+#include <util.h>
 
 using namespace NEAT;
 using namespace std;
