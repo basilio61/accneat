@@ -93,7 +93,7 @@ struct Evaluator {
     __net_eval_decl void evaluate(real_t *actual) {
         real_t *expected = config->outputs(istep);
         real_t result = 0.0;
-        const int l = 10;
+        const int l = 5;
         for(size_t i = 0; i < config->noutputs; i++) {
             std::ostringstream ss;
             ss << expected[i];
@@ -101,7 +101,7 @@ struct Evaluator {
             
             char char_array[l];
             strcpy(char_array, s.c_str());
-            const char ch[strlen(char_array)] = char_array;
+            const char ch[l] = char_array;
             printf(ch);
             real_t err = actual[i] - expected[i];
             if(err < 0) err *= -1;
