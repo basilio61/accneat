@@ -67,7 +67,7 @@ namespace NEAT {
             vector<size_t> nnodes;
             vector<size_t> nlinks;
             vector<real_t> fitness;
-
+            int runs;
             for(int expcount = 1; expcount <= env->num_runs; expcount++) {
                 rng_t rng_exp(rng.integer());
                 vector<unique_ptr<Genome>> genomes;
@@ -84,6 +84,7 @@ namespace NEAT {
                 bool success = false;
                 int gen;
                 for(gen = 1; !success && (gen <= gens); gen++) {
+                    runs = expcount;
                     cout << "Epoch " << gen << " . Experiment " << expcount << "/" << env->num_runs << endl;	
 
                     static Timer timer("epoch");
