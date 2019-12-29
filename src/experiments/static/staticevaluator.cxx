@@ -1,5 +1,5 @@
 #include "std.hxx"
-
+#include <iostream>
 #include "network.h"
 #include "networkexecutor.h"
 #include "staticevaluator.h"
