@@ -2,6 +2,7 @@
 
 #include "evaluatorexperiment.h"
 #include "staticevaluator.h"
+#include "neat.h"
 
 namespace NEAT {
 
