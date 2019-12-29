@@ -8,6 +8,7 @@
 #include "stats.h"
 #include "timer.h"
 #include "util.h"
+#include "neat.h"
 
 namespace NEAT {
 
@@ -57,9 +58,10 @@ namespace NEAT {
 
         virtual void run(class rng_t &rng, int gens) override {
             using namespace std;
-
-            network_evaluator = unique_ptr<NetworkEvaluator>(create_evaluator());
-            
+            bool test;
+            if (!test) {
+                network_evaluator = unique_ptr<NetworkEvaluator>(create_evaluator());
+            }
             int nsuccesses = 0;
             vector<int> success_generations;
             vector<size_t> nnodes;
@@ -67,14 +69,13 @@ namespace NEAT {
             vector<real_t> fitness;
 
             for(int expcount = 1; expcount <= env->num_runs; expcount++) {
-                mkdir( get_dir_path(expcount) );
-
-                //Create a unique rng sequence for this experiment
-                rng_t rng_exp(rng.integer());
-
-                fittest = nullptr;
-                env->genome_manager = GenomeManager::create();
-                vector<unique_ptr<Genome>> genomes = create_seeds(rng_exp);
+                if (!test) {
+                    mkdir( get_dir_path(expcount) );
+                    rng_t rng_exp(rng.integer());
+                    fittest = nullptr;
+                    env->genome_manager = GenomeManager::create();
+                    vector<unique_ptr<Genome>> genomes = create_seeds(rng_exp);
+                }
 
                 //Spawn the Population
                 pop = Population::create(rng_exp, genomes);
