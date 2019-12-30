@@ -7,7 +7,7 @@
 #include "population.h"
 #include "stats.h"
 #include "timer.h"
-#include "util.h"
+#include "globals.h"
 
 namespace NEAT {
 
