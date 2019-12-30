@@ -1,6 +1,7 @@
 #include "std.h"
 #include "staticexperiment.h"
 #include "globals.h"
+#include "util.h"
 #include <iterator>
 #include <iostream>
 #include <fstream>
