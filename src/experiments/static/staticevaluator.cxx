@@ -198,7 +198,7 @@ static void create_config(const std::vector<Test> &tests,
     cout << "===== TESTS =====" << endl;
     cout << "=================" << endl;
     int runs;
-    printf(runs);
+    cout << runs;
     if (runs == 10) {
         for(size_t i = 0; i < tests.size(); i++) {
             const Test &t = tests[i];
